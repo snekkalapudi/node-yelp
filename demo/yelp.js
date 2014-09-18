@@ -8,7 +8,6 @@ var yelp = require("../index").createClient({
 
 
 
-
 var url = require('url');
 
 
@@ -33,8 +32,7 @@ var term = url_parts.query.term || 'food',
 
     res.writeHead(200, {'Content-Type': 'text/json'});
     console.log(url_parts.query);
-    //console.log(location);
-
+    
     yelp.search({term: term, location: location}, function(error, data) {
   		res.end(JSON.stringify(data));
 	});
